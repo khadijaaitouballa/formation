@@ -12,7 +12,7 @@ default_args = {
 with DAG(
     dag_id="full_etl_pipeline",
     start_date=datetime(2024, 1, 1),
-    schedule_interval=None,
+    schedule=None,
     catchup=False,
     default_args=default_args
 ):
