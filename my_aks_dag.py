@@ -15,7 +15,7 @@ with DAG(
     dag_id='hello_aks_workflow',
     default_args=default_args,
     description='A simple DAG to run on AKS',
-    schedule_interval=timedelta(days=1),
+    schedule=timedelta(days=1),
     start_date=datetime(2025, 12, 1),
     catchup=False,
 ) as dag:
