@@ -2,6 +2,13 @@ from airflow import DAG
 from airflow.providers.cncf.kubernetes.operators.spark_kubernetes import SparkKubernetesOperator
 from airflow.providers.cncf.kubernetes.sensors.spark_kubernetes import SparkKubernetesSensor
 from datetime import datetime, timedelta
+from airflow.sdk.api.client import ApiClient
+
+client = ApiClient(
+    base_url="http://airflow-api-server:8080/execution/",
+    username="myuser",
+    password="Hps001002003*$*"
+)
 
 default_args = {
     "owner": "haitam",
