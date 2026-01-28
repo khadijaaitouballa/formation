@@ -12,17 +12,13 @@ default_args = {
 }
 
 with DAG(
-    dag_id='hello_aks_workflow',
-    default_args=default_args,
-    description='A simple DAG to run on AKS',
-    schedule=timedelta(days=1),
-    start_date=datetime(2025, 12, 1),
-    catchup=False,
+    dag_id="my_aks_dag",
+    start_date=datetime(2026, 1, 1),
+    schedule=None,
 ) as dag:
-    
-    def print_hello():
-        print("Hello from Airflow on AKS!")
-     hello_task = PythonOperator(
-        task_id='hello_task',
-        python_callable=print_hello,
+
+    # Line 25: Ensure there are exactly 4 spaces (or 1 tab) here
+    hello_task = PythonOperator(
+        task_id="hello_task",
+        python_callable=my_function,
     )
