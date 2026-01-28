@@ -10,7 +10,7 @@ def print_hello():
 with DAG(
     dag_id="my_aks_dag",
     start_date=datetime(2026, 1, 1),
-    schedule_interval=None,
+    schedule=None,
     catchup=False,
     tags=["example"],
 ) as dag:
